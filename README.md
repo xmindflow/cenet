@@ -1,4 +1,4 @@
-# CENet: Context Enhancement Network for Medical Image Segmentation <br>  <span style="float: right"><sub><sup>MICCAI 2025 (early accept) - Code will be uploaded soon!</sub></sup></span>
+# CENet: Context Enhancement Network for Medical Image Segmentation <br>  <span style="float: right"><sub><sup>MICCAI 2025 (Early Accept) - Code will be uploaded soon!</sub></sup></span>
 
 [![arXiv](https://img.shields.io/badge/arXiv-2505.11111-b31b1b.svg)]()
 
@@ -6,7 +6,7 @@ Medical image segmentation, particularly in multi-domain scenarios, requires pre
 
 
 ## Updates
-- **`22.05.2025`** | Early Accepted in MICCAI 2025! 🥳
+- **`22.05.2025`** | Early Accepted (Top 9%) in MICCAI 2025! 🥳
 
 ## Citation
 ```
