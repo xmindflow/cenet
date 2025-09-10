@@ -1,6 +1,9 @@
 # CENet: Context Enhancement Network for Medical Image Segmentation
 
 <p align="center">
+  <a href="https://papers.miccai.org/miccai-2025/paper/2882_paper.pdf">
+    <img src="https://img.shields.io/badge/MICCAI-2025-blue.svg" alt="MICCAI 2025 Paper" />
+  </a>
   <a href="http://arxiv.org/abs/2505.18423">
     <img src="https://img.shields.io/badge/arXiv-2505.18423-b31b1b.svg" alt="arXiv:2505.18423" />
   </a>
@@ -230,11 +233,15 @@ Qualitative comparison of CENet and previous methods across skin benchmarks.
 Please cite our paper if you use this code:
 
 ```bibtex
-@article{bozorgpour2025cenet,
-  title   = {CENet: Context Enhancement Network for Medical Image Segmentation},
-  author  = {Bozorgpour, Afshin and Kolahi, Sina G. and Azad, Reza and Hacihaliloglu, Ilker and Merhof, Dorit},
-  journal = {arXiv preprint arXiv:2505.18423},
-  year    = {2025}
+@InProceedings{BozAfs_CENet_MICCAI2025,
+        author = { Bozorgpour, Afshin and Kolahi, Sina Ghorbani and Azad, Reza and Hacihaliloglu, Ilker and Merhof, Dorit},
+        title = { { CENet: Context Enhancement Network for Medical Image Segmentation } },
+        booktitle = {proceedings of Medical Image Computing and Computer Assisted Intervention -- MICCAI 2025},
+        year = {2025},
+        publisher = {Springer Nature Switzerland},
+        volume = {LNCS 15960},
+        month = {September},
+        page = {122 -- 132}
 }
 ```
 
