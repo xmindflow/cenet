@@ -142,11 +142,23 @@ Organize your datasets as follows:
 
 ```
 /path/to/ACDC_2D/
-├── list_ACDC/    # CSVs or TXT files listing train/val/test splits
-├── train/
-├── valid/
-└── test/
+├── list_ACDC/
+│   ├── train.txt   # one filename per line, relative to train/
+│   ├── valid.txt   # one filename per line, relative to valid/
+│   └── test.txt    # one filename per line, relative to test/
+├── train/          # one .npz per 2D slice
+├── valid/          # one .npz per 2D slice
+└── test/           # one .npz per case (full volume)
 ```
+
+The loader (`src/datasets/dataset_acdc.py`) reads every sample with `np.load` and expects two arrays in each `.npz` file:
+
+| Key     | Content                                                                              |
+|---------|--------------------------------------------------------------------------------------|
+| `img`   | the MRI image (a 2D slice for `train/` and `valid/`, the whole volume for `test/`)   |
+| `label` | the integer segmentation mask with the same shape (4 classes: background, RV, Myo, LV) |
+
+Slices are resized to `--img_size` (224 by default) on the fly during training. Each line in a list file is the exact filename inside the matching folder, for example `case_patient001_frame01_slice_0.npz`. Raw ACDC NIfTI files must first be converted to this layout, since the code does not read `.nii.gz` directly.
 
 ### Synapse (Abdominal CT)
 
