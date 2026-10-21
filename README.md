@@ -158,7 +158,9 @@ The loader (`src/datasets/dataset_acdc.py`) reads every sample with `np.load` an
 | `img`   | the MRI image (a 2D slice for `train/` and `valid/`, the whole volume for `test/`)   |
 | `label` | the integer segmentation mask with the same shape (4 classes: background, RV, Myo, LV) |
 
-Slices are resized to `--img_size` (224 by default) on the fly during training. Each line in a list file is the exact filename inside the matching folder, for example `case_patient001_frame01_slice_0.npz`. Raw ACDC NIfTI files must first be converted to this layout, since the code does not read `.nii.gz` directly.
+Slices are resized to `--img_size` (224 by default) on the fly during training. Each line in a list file is the exact filename inside the matching folder, for example `case_patient001_frame01_slice_0.npz`.
+
+The preprocessed ACDC files are not included in this repository. Download the public 2D release used in our experiments from [Google Drive](https://drive.google.com/file/d/1CruCQ-jjvA97BX-LIYwXaRMLmp3DN9zc/view). It is the same processed ACDC data used by [Swin-Unet](https://drive.google.com/drive/folders/1KQcrci7aKsYZi1hQoZ3T3QUtcy7b--n4). After unzipping you will have `train/`, `valid/`, `test/` and `lists_ACDC/`. Rename `lists_ACDC` to `list_ACDC` so that it matches `scripts/acdc.sh`. No further conversion is required.
 
 ### Synapse (Abdominal CT)
 
