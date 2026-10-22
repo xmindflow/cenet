@@ -51,7 +51,7 @@ Medical image segmentation, particularly in multi-domain scenarios, requires pre
 Load a pretrained model with PyTorch Hub. The code is fetched from this repository and the weights from [Hugging Face](https://huggingface.co/afshinbigboy/CENet):
 
 ```bash
-pip install torch timm==1.0.16 monai==1.4.0 "numpy<2" scipy SimpleITK huggingface_hub
+pip install torch torchvision timm==1.0.16 monai==1.4.0 "numpy<2" scipy SimpleITK huggingface_hub
 ```
 
 ```python
@@ -76,8 +76,6 @@ Inputs the predictor expects:
 - **acdc**: a short-axis cardiac MRI slice or volume. Intensities are min-max scaled to [0, 1].
 
 > These models are for research only and are not intended for clinical use.
-
-There is also an online demo on [Hugging Face Spaces](https://huggingface.co/spaces/afshinbigboy/CENet).
 
 ---
 
