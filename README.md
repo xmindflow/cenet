@@ -23,6 +23,7 @@ A unified PyTorch implementation of **CENet**, our Context Enhancement Network f
 ## 📖 Table of Contents
 
 - [Abstract](#abstract)  
+- [Quick Start (no cloning)](#-quick-start-no-cloning)  
 - [Installation](#installation)  
 - [Repository Structure](#repository-structure)  
 - [Pre-trained Weights](#pre-trained-weights)  
@@ -42,6 +43,41 @@ A unified PyTorch implementation of **CENet**, our Context Enhancement Network f
 Medical image segmentation, particularly in multi-domain scenarios, requires precise preservation of anatomical structures across diverse representations. While deep learning has advanced this field, existing models often struggle with accurate boundary representation, variability in organ morphology, and information loss during downsampling, limiting their accuracy and robustness. To address these challenges, we propose the Context Enhancement Network (CENet), a novel segmentation framework featuring two key innovations. First, the Dual Selective Enhancement Block (DSEB) integrated into skip connections enhances boundary details and improves the detection of smaller organs in a context-aware manner. Second, the Context Feature Attention Module (CFAM) in the decoder employs a multi-scale design to maintain spatial integrity, reduce feature redundancy, and mitigate overly enhanced representations. Extensive evaluations on both radiology and dermoscopic datasets demonstrate that CENet outperforms state-of-the-art (SOTA) methods in multi-organ segmentation and boundary detail preservation, offering a robust and accurate solution for complex medical image analysis tasks.
 
 ![CENet Architecture](assets/cenet.png)
+
+---
+
+## ⚡ Quick Start (no cloning)
+
+Load a pretrained model with PyTorch Hub. The code is fetched from this repository and the weights from [Hugging Face](https://huggingface.co/afshinbigboy/CENet):
+
+```bash
+pip install torch timm==1.0.16 monai==1.4.0 "numpy<2" scipy SimpleITK huggingface_hub
+```
+
+```python
+import torch
+
+# A predictor applies the same preprocessing as in training and returns a mask
+# with the size of your input. Datasets: "synapse", "acdc", "ham10000", "ph2".
+predictor = torch.hub.load("xmindflow/cenet", "predictor", dataset="ham10000")
+mask = predictor.predict("lesion.jpg")           # (H, W), 0 = background, 1 = lesion
+
+ct = torch.hub.load("xmindflow/cenet", "predictor", dataset="synapse")
+mask = ct.predict("abdomen_ct.nii.gz")           # (D, H, W), slice by slice
+print(ct.classes)                                 # label names
+
+# Or just the model: (B, C, 224, 224) -> (B, num_classes, 224, 224) logits
+model = torch.hub.load("xmindflow/cenet", "cenet", dataset="synapse")
+```
+
+Inputs the predictor expects:
+- **ham10000 / ph2**: an RGB dermoscopy image (path, PIL image or array).
+- **synapse**: an axial abdominal CT slice or volume. Raw Hounsfield units are windowed to [-125, 275] as in training; images already scaled to [0, 1] or 0–255 are used as they are.
+- **acdc**: a short-axis cardiac MRI slice or volume. Intensities are min-max scaled to [0, 1].
+
+> These models are for research only and are not intended for clinical use.
+
+There is also an online demo on [Hugging Face Spaces](https://huggingface.co/spaces/afshinbigboy/CENet).
 
 ---
 
@@ -87,6 +123,7 @@ Medical image segmentation, particularly in multi-domain scenarios, requires pre
 │   ├── networks/                   # Model definitions
 │   ├── utils/                      # Training & eval utilities
 │   └── main_*.py                   # Entry points
+├── hubconf.py                      # PyTorch Hub entry points
 ├── requirements.txt  
 └── README.md
 ```
