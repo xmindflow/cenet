@@ -1,7 +1,7 @@
 # CENet: Context Enhancement Network for Medical Image Segmentation
 
 <p align="center">
-  <a href="https://papers.miccai.org/miccai-2025/paper/2882_paper.pdf">
+  <a href="https://doi.org/10.1007/978-3-032-04927-8_12">
     <img src="https://img.shields.io/badge/MICCAI-2025-blue.svg" alt="MICCAI 2025 Paper" />
   </a>
   <a href="http://arxiv.org/abs/2505.18423">
@@ -290,14 +290,16 @@ Please cite our paper if you use this code:
 
 ```bibtex
 @InProceedings{BozAfs_CENet_MICCAI2025,
-        author = { Bozorgpour, Afshin and Kolahi, Sina Ghorbani and Azad, Reza and Hacihaliloglu, Ilker and Merhof, Dorit},
-        title = { { CENet: Context Enhancement Network for Medical Image Segmentation } },
-        booktitle = {proceedings of Medical Image Computing and Computer Assisted Intervention -- MICCAI 2025},
-        year = {2025},
-        publisher = {Springer Nature Switzerland},
-        volume = {LNCS 15960},
-        month = {September},
-        page = {122 -- 132}
+  author    = {Bozorgpour, Afshin and Kolahi, Sina Ghorbani and Azad, Reza and Hacihaliloglu, Ilker and Merhof, Dorit},
+  title     = {{CENet}: Context Enhancement Network for Medical Image Segmentation},
+  booktitle = {Medical Image Computing and Computer Assisted Intervention -- MICCAI 2025},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {15960},
+  pages     = {120--129},
+  year      = {2025},
+  publisher = {Springer Nature Switzerland},
+  address   = {Cham},
+  doi       = {10.1007/978-3-032-04927-8_12}
 }
 ```
 
