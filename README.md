@@ -95,7 +95,14 @@ Medical image segmentation, particularly in multi-domain scenarios, requires pre
 
 ## 📦 Pre-trained Weights
 
-All dataset- and network-specific checkpoints (\~590 MB) are hosted on Mega.nz:
+All dataset- and network-specific checkpoints are available on **Hugging Face**: [afshinbigboy/CENet](https://huggingface.co/afshinbigboy/CENet). The model card shows how to load each one with `hf_hub_download`. To download them all into `weights/`:
+
+```bash
+pip install huggingface_hub
+hf download afshinbigboy/CENet --include "*.pth" --local-dir weights
+```
+
+They are also hosted on Mega.nz (\~590 MB):
 
 1. **Download & extract**
 
