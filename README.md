@@ -4,7 +4,7 @@
   <a href="https://doi.org/10.1007/978-3-032-04927-8_12">
     <img src="https://img.shields.io/badge/MICCAI-2025-blue.svg" alt="MICCAI 2025 Paper" />
   </a>
-  <a href="http://arxiv.org/abs/2505.18423">
+  <a href="https://arxiv.org/abs/2505.18423">
     <img src="https://img.shields.io/badge/arXiv-2505.18423-b31b1b.svg" alt="arXiv:2505.18423" />
   </a>
   <br>
@@ -12,6 +12,8 @@
 </p>
 
 A unified PyTorch implementation of **CENet**, our Context Enhancement Network for robust, high-resolution segmentation across multiple medical domains (cardiac MRI, abdominal CT, dermoscopy).
+
+<sub>Also from our group: [MaLViL](https://github.com/xmindflow/MaLViL) (MLMI @ MICCAI 2026), Vision-LSTM at every decoder stage.</sub>
 
 ---
 
@@ -290,7 +292,7 @@ Please cite our paper if you use this code:
 
 ```bibtex
 @InProceedings{BozAfs_CENet_MICCAI2025,
-  author    = {Bozorgpour, Afshin and Kolahi, Sina Ghorbani and Azad, Reza and Hacihaliloglu, Ilker and Merhof, Dorit},
+  author    = {Bozorgpour, Afshin and Ghorbani Kolahi, Sina and Azad, Reza and Hacihaliloglu, Ilker and Merhof, Dorit},
   title     = {{CENet}: Context Enhancement Network for Medical Image Segmentation},
   booktitle = {Medical Image Computing and Computer Assisted Intervention -- MICCAI 2025},
   series    = {Lecture Notes in Computer Science},
