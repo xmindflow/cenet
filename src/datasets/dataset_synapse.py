@@ -4,11 +4,13 @@ import h5py
 import numpy as np
 import torch
 from scipy import ndimage
-from scipy.ndimage.interpolation import zoom
+from scipy.ndimage import zoom
 from torch.utils.data import Dataset
 import imgaug as ia
 import imgaug.augmenters as iaa  # 导入iaa
 from tqdm.auto import tqdm
+
+np.bool = bool  # imgaug 0.4.0 still uses this alias, which numpy 1.24 removed
 
 
 
